@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Web App</title>
+</head>
+<body>
+    <form>
+        <label for="input_text">Input:</label>
+        <input type="text" id="input_text" name="input_text"><br><br>
+        <button type="button" onclick="runScript()">Run Script</button>
+    </form>
+    <script>
+        function runScript() {
+            const inputText = document.getElementById("input_text").value;
+            fetch("/run_script", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: `input_text=${inputText}`
+            })
+            .then(response => response.text())
+            .then(message => alert(message))
+            .catch(error => console.error(error));
+        }
+    </script>
+</body>
+</html>
