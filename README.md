@@ -3,20 +3,24 @@ Check to see if a password is safe using many different methods, including HavIB
 No sensitive information is shared at all. Only the first five characters of the SHA-1 hash is uploaded to HaveIBeenPwned, all others processes are competed locally on the computer.
 
 # Requirements
-`pip install requests termcolor colorama hashlib argparse`
-
-# Installation
-If you haven't already, install git [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
-
-Then, clone the repository to your local machine with:
- 
+pip install requests 
+pip install termcolor
+pip instll colorama
+pip install hashlib
+pip install argparse
 
 # Usage
-Change directories into the cloned repository.
+Check out to the project path and in the command prompt follow the steps below.
 `cd password-analyser`
 
-To run:
-`python3 password-analyser.py PASSSWORD`   
-Replace PASSWORD with your desired password  
-Or, to read a password from a file:  
-`python3 password-analyser.py -f FILE`   
+To run :
+`python password-analyser.py PASSSWORD`   
+///Replace PASSWORD with your choice of your password  
+ Or, to read a password from a file:  
+`python password-analyser.py -f FILE`
+
+
+To pass the input from UI run the following commands
+python SubProcess.py
+then it will launch the application in the http://127.0.0.1:5000
+provide the input in the UI then it will display the password strength.
