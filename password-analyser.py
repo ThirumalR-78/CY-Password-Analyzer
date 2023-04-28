@@ -4,7 +4,7 @@ import sys
 
 
 parser = argparse.ArgumentParser(
-    description="Check the strength of your password.")
+    description="Evaluate the security, safety, and Strength of your password.")
 parser.add_argument('user_input', type=str, help='Input a password', nargs='?')
 parser.add_argument("-f",
                     "--file",
@@ -13,17 +13,15 @@ parser.add_argument("-f",
                     help="Username list to report.")
 
 args = parser.parse_args()
-test=''
-
+output=''
 
 if args.file == "":
+    #Reading the input from the commandline/from the ui text feild
     if args.user_input:
-       test = main.password_analyser(vars(args)['user_input'])
-       print(">>>>>>>>>>>>>>>>>>>>"+ test)
+       output = main.password_analyser(vars(args)['user_input'])
     else:
         parser.print_help()
     # return "Hello from Python!"    
-
 else:
     reader = open(args.file, "r").readlines()
 
@@ -34,5 +32,3 @@ else:
         print("\nPassword: ", lines)
         main.password_analyser(lines)
     # return "Hello from Python!"
-def Function1():
-    return "Hello from Python!"

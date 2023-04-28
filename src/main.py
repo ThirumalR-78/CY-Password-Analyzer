@@ -95,15 +95,8 @@ def password_analyser(userinput):
         returnValue.append('Password not Pwned!')
     print("---------------------------------------")
     result = " ".join(returnValue)
-    # with open('data.txt', 'w') as f:
-    # f.write('hello world')
     return result
 
 def Function1(input_text):
     res = password_analyser(input_text)
-    # result = " ".join(returnValue)
-    # with open('data.txt', 'r') as f:
-    # data = f.read()
-
-    # print(data)
     return res
